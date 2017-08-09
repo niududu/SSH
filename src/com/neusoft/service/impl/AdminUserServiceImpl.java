@@ -27,15 +27,15 @@ public class AdminUserServiceImpl implements AdminUserService{
 	}
 
 	@Override
-	public void deleteAdminUser(AdminUser adminUser) {
+	public void updateAdminUser(AdminUser adminUser) {
 		// TODO Auto-generated method stub
-		
+		adminUserDao.updateAdminUser(adminUser);
 	}
 
 	@Override
-	public void updateAdminUserById(int id) {
+	public void deleteAdminUser(AdminUser adminUser) {
 		// TODO Auto-generated method stub
-		
+		adminUserDao.deleteAdminUser(adminUser);
 	}
 
 	@Override
@@ -43,6 +43,12 @@ public class AdminUserServiceImpl implements AdminUserService{
 		//调用数据持久层的findAdminUser()方法
 		Page page = adminUserDao.findAdminUser(currentPage,pageSize);
 		return page;
+	}
+
+	@Override
+	public AdminUser findAdminById(int id) {
+		AdminUser admin= adminUserDao.findAdminById(id);
+		return admin;
 	}
 
 }

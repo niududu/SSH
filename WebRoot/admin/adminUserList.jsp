@@ -8,6 +8,22 @@
     <link rel="stylesheet" type="text/css" href="css/common.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <script type="text/javascript" src="js/libs/modernizr.min.js"></script>
+    <script type="text/javascript">
+    function allChoose(){
+     	  var allcheck=document.getElementById("allck");
+    	  var idcks=document.getElementsByName("ids"); 
+    	  if(allcheck.checked==true){
+    		  for(var i=0;i<idcks.length;i++){
+    			  idcks[i].checked=true;
+    		  }
+    	   }else{ 
+    		   for(var i=0;i<idcks.length;i++){
+     			  idcks[i].checked=false;
+     		  }
+    	   }
+       }
+    </script>
+    
 </head>
 <body>
 <div class="topbar-wrap white">
@@ -104,8 +120,8 @@
                             <td><s:property value="password"/></td>
                             <td><s:property value="lastlogintime"/></td>
                             <td>
-                                <a class="link-update" href=" ">修改</a>
-                                <a class="link-del" href=" ">删除</a>
+                                <a class="link-update" href="adminUserAction!findAdminById?id=<s:property value="id"/>">修改</a>
+                                <a class="link-del" href="adminUserAction!deleteAdminById?id=<s:property value="id"/>">删除</a>
                             </td>
                         </tr> 
                         </s:iterator>

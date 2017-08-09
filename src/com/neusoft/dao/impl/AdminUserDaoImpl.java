@@ -34,15 +34,15 @@ public class AdminUserDaoImpl implements AdminUserDao {
 	
 
 	@Override
-	public void deleteAdminUser(AdminUser adminUser) {
+	public void updateAdminUser(AdminUser adminUser) {
 		// TODO Auto-generated method stub
-		
+		getSession().update(adminUser);
 	}
 
 	@Override
-	public void updateAdminUserById(int id) {
+	public void deleteAdminUser(AdminUser adminUser) {
 		// TODO Auto-generated method stub
-		
+		getSession().delete(adminUser);
 	}
 
 	@Override
@@ -58,6 +58,12 @@ public class AdminUserDaoImpl implements AdminUserDao {
 		page.setCurrentPage(currentPage);
 		
 		return page;
+	}
+	@Override
+	public AdminUser findAdminById(int id) {
+		Query query=getSession().createQuery("from AdminUser a where a.id="+id);
+		AdminUser admin=(AdminUser) query.list().get(0);
+		return admin;
 	}
 	
 	

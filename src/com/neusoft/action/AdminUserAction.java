@@ -11,6 +11,14 @@ public class AdminUserAction extends ActionSupport {
 	private int id;
 	private String username;
 	private String password;
+	private AdminUser adminUser;
+	public AdminUser getAdminUser() {
+		return adminUser;
+	}
+
+	public void setAdminUser(AdminUser adminUser) {
+		this.adminUser = adminUser;
+	}
 	//需要调用业务逻辑层的接口
 	private AdminUserService adminUserService;
 	//当前页
@@ -91,6 +99,24 @@ public class AdminUserAction extends ActionSupport {
 		adminUser.setUsername(username);
 		adminUser.setPassword(password);
 		adminUserService.saveAdminUser(adminUser);
+		return "success";
+	}
+	//通过id查找数据
+	public String findAdminById(){
+		 adminUser = adminUserService.findAdminById(id);
+		return "updatetopage";
+	}
+	public String updateAdmin(){
+		adminUser=new AdminUser();
+		adminUser.setId(id);
+		adminUser.setUsername(username);
+		adminUser.setPassword(password);
+		adminUserService.updateAdminUser(adminUser);
+		return "success";
+	}
+	public String deleteAdminById(){
+		adminUser = adminUserService.findAdminById(id);
+		adminUserService.deleteAdminUser(adminUser);
 		return "success";
 	}
 }

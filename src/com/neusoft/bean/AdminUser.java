@@ -9,7 +9,7 @@ public class AdminUser {
 	private String username;
 	private String password;
 	private String lastlogintime;
-	
+
 	public int getId() {
 		return id;
 	}
