@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import com.neusoft.bean.AdminUser;
 import com.neusoft.bean.User;
 import com.neusoft.dao.AdminUserDao;
+import com.neusoft.page.Page;
 
 /**
  * π‹¿Ì‘±
@@ -28,7 +29,7 @@ public class AdminUserDaoImpl implements AdminUserDao {
 	@Override
 	public void saveAdminUser(AdminUser adminUser) {
 		// TODO Auto-generated method stub
-		
+		getSession().save(adminUser);
 	}
 	
 
@@ -45,9 +46,18 @@ public class AdminUserDaoImpl implements AdminUserDao {
 	}
 
 	@Override
-	public List<AdminUser> findAdminUser() {
+	public Page findAdminUser(int currentPage,int pageSize) {
 		Query query = getSession().createQuery("from AdminUser");
-		return query.list();
+		query.setFirstResult((currentPage-1)*pageSize);
+		query.setMaxResults(pageSize);
+		List<AdminUser> data=query.list();
+		Page page=new Page(data);
+		page.setAllRow();
+		page.setPageSize(pageSize);
+		page.setTotalPage();
+		page.setCurrentPage(currentPage);
+		
+		return page;
 	}
 	
 	
