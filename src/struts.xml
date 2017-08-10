@@ -14,5 +14,9 @@
 			<result name="updatesuccess" type="redirectAction">userAction</result>
 			<result name="deletesuccess" type="redirectAction">userAction</result>
 		</action>
+		<action name="goodsAction" class="goodsAction">
+			<result name="success">/admin/goodsList.jsp</result>
+			
+		</action>
 	</package>
 </struts>    

@@ -12,4 +12,8 @@
 	<bean id="userService" class="com.neusoft.service.impl.UserServiceImpl">
 		<property name="userDao" ref="userDao"></property>
 	</bean>
+	
+	<bean id="goodsService" class="com.neusoft.service.impl.GoodsServiceImpl">
+		<property name="goodsDao" ref="goodsDao"></property>
+	</bean>
 </beans>

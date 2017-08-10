@@ -12,4 +12,8 @@
 	<bean id="userDao" class="com.neusoft.dao.impl.UserDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
+	<bean id="goodsDao" class="com.neusoft.dao.impl.GoodsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 </beans>

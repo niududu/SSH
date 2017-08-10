@@ -12,4 +12,8 @@
 	<bean id="userAction" class="com.neusoft.action.UserAction">
 		<property name="userService" ref="userService"></property>
 	</bean>
+	
+	<bean id="goodsAction" class="com.neusoft.action.goodsAction">
+		<property name="goodsService" ref="goodsService"></property>
+	</bean>
 </beans>
