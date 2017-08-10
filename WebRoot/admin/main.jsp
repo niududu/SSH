@@ -1,5 +1,5 @@
 ﻿<%@page language="java" pageEncoding="utf-8"%>
-
+<%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -37,7 +37,7 @@
                 <li>
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
-                        <li><a href="userList.html"><i class="icon-font">&#xe008;</i>用户管理</a></li>
+                        <li><a href="userAction"><i class="icon-font">&#xe008;</i>用户管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe006;</i>产品类别</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>产品管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>订单管理</a></li>
@@ -69,10 +69,10 @@
             </div>
             <div class="result-content">
                 <div class="short-wrap">
-                    <a href="#"><i class="icon-font">&#xe001;</i>新增用户</a>
+                    <a href="addUser.jsp"><i class="icon-font">&#xe001;</i>新增用户</a>
                     <a href="#"><i class="icon-font">&#xe005;</i>新增产品</a>
                     <a href="#"><i class="icon-font">&#xe048;</i>新增产品分类</a>
-                    <a href="#"><i class="icon-font">&#xe041;</i>新增管理员</a> 
+                    <a href="addAdminUser.jsp"><i class="icon-font">&#xe041;</i>新增管理员</a> 
                 </div>
             </div>
         </div>

@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿<%@page language="java" pageEncoding="utf-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
+<!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -13,7 +15,7 @@
         <div class="topbar-logo-wrap clearfix">
             <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
             <ul class="navbar-list clearfix">
-                <li><a class="on" href="index.html">首页</a></li>
+                <li><a class="on" href="main.jsp">首页</a></li>
                 <li><a href="#" target="_blank">网站首页</a></li>
             </ul>
         </div>
@@ -36,20 +38,20 @@
                 <li>
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
-                        <li><a href="userList.jsp"><i class="icon-font">&#xe008;</i>用户管理</a></li>
+                        <li><a href="userAction"><i class="icon-font">&#xe008;</i>用户管理</a></li>
+                        <li><a href="design.html"><i class="icon-font">&#xe006;</i>产品类别</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>产品管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe006;</i>分类管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe004;</i>订单管理</a></li>
+                        <li><a href="design.html"><i class="icon-font">&#xe005;</i>订单管理</a></li>
+                        <li><a href="adminUserAction"><i class="icon-font">&#xe005;</i>管理员管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe052;</i>友情链接</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe033;</i>广告管理</a></li>
+                        <li><a href="design.html"><i class="icon-font">&#xe033;</i>广告管理</a></li> 
                     </ul>
                 </li>
                 <li>
                     <a href="#"><i class="icon-font">&#xe018;</i>系统管理</a>
                     <ul class="sub-menu">
-                        <li><a href="system.html"><i class="icon-font">&#xe017;</i>系统设置</a></li>
-                        <li><a href="system.html"><i class="icon-font">&#xe037;</i>清理缓存</a></li>
+                        <li><a href="system.html"><i class="icon-font">&#xe017;</i>系统设置</a></li> 
                         <li><a href="system.html"><i class="icon-font">&#xe046;</i>数据备份</a></li>
                         <li><a href="system.html"><i class="icon-font">&#xe045;</i>数据还原</a></li>
                     </ul>
@@ -61,44 +63,29 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">用户管理</a><span class="crumb-step">&gt;</span><span>增加用户</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="main.jsp">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="adminUserList.jsp">用户管理</a><span class="crumb-step">&gt;</span><span>修改用户</span></div>
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="" method="post" id="myform" name="myform">
+                <form action="userAction!updateUser" method="post" id="myform" name="myform">
                     <table class="insert-tab" width="100%">
-                        <tbody><tr>
-                            <th width="120"><i class="require-red">*</i>用户类型：</th>
-                            <td>
-                                <select name="type" id="type" class="required"> 
-                                    <option value="1">管理员用户</option>
-                                    <option value="0">普通用户</option>
-                                </select>
-                            </td>
-                        </tr>
+                        <tbody>
                             <tr>
                                 <th><i class="require-red">*</i>用户名：</th>
                                 <td>
-                                    <input class="common-text required" id="username" name="username" size="50" value="" type="text">
+                                <!-- 实现了固定username,在password字段提示出了原密码，只有密码栏和邮箱栏才可以被修改 -->
+                                    <input class="common-text required" id="username" name="username" size="50" value="<s:property value="User.username"/>" type="text" readonly="readonly" >
+                                    <input class="common-text required" id="id" name="id" size="50" <s:property value="id"/> type="hidden" >
                                 </td>
                             </tr>
                             <tr>
-                                <th>真实姓名：</th>
-                                <td><input class="common-text" name="realname" size="50" type="text"></td>
-                            </tr>
-                            <tr>
                                 <th>密码：</th>
-                                <td><input class="common-text" name="password" size="50" type="text"></td>
-                            </tr>
-                            <tr>
-                                <th>联系电话：</th>
-                                <td><input class="common-text" name="tel" size="50" type="text"></td>
+                                <td><input class="common-text" name="password" size="50" type="text"value="<s:property value="User.password"/>"></td>
                             </tr>
                             <tr>
                                 <th>邮箱：</th>
-                                <td><input class="common-text" name="email" size="50" type="text"></td>
+                                <td><input class="common-text" name="email" size="50" type="text"value="<s:property value="User.email"/>"></td>
                             </tr>
-                            
                             <tr>
                                 <th></th>
                                 <td>

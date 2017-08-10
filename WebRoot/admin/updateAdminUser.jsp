@@ -15,7 +15,7 @@
         <div class="topbar-logo-wrap clearfix">
             <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
             <ul class="navbar-list clearfix">
-                <li><a class="on" href="index.html">首页</a></li>
+                <li><a class="on" href="main.jsp">首页</a></li>
                 <li><a href="#" target="_blank">网站首页</a></li>
             </ul>
         </div>
@@ -63,7 +63,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">管理员管理</a><span class="crumb-step">&gt;</span><span>修改管理员</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="main.jsp">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="adminUserList.jsp">管理员管理</a><span class="crumb-step">&gt;</span><span>修改管理员</span></div>
         </div>
         <div class="result-wrap">
             <div class="result-content">
@@ -74,13 +74,13 @@
                                 <th><i class="require-red">*</i>用户名：</th>
                                 <td>
                                 <!-- 未能实现固定username,所以username以及password都可以被修改 -->
-                                    <input class="common-text required" id="username" name="username" size="50" <s:property value="adminUser.username"/> type="text" >
+                                    <input class="common-text required" id="username" name="username" size="50" value="<s:property value="adminUser.username"/>" type="text" readonly="readonly" >
                                     <input class="common-text required" id="id" name="id" size="50" <s:property value="id"/> type="hidden" >
                                 </td>
                             </tr>
                             <tr>
                                 <th>密码：</th>
-                                <td><input class="common-text" name="password" size="50" type="text"></td>
+                                <td><input class="common-text" name="password" size="50" type="text"value="<s:property value="adminUser.password"/>"></td>
                             </tr>
                             <tr>
                                 <th></th>

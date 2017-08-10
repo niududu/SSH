@@ -31,8 +31,8 @@
         <div class="topbar-logo-wrap clearfix">
             <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
             <ul class="navbar-list clearfix">
-                <li><a class="on" href="index.html">首页</a></li>
-                <li><a href=" " target="_blank">网站首页</a></li>
+                <li><a class="on" href="main.jsp">首页</a></li>
+                <li><a href="index.jsp" target="_blank">网站首页</a></li>
             </ul>
         </div>
         <div class="top-info-wrap">
@@ -54,7 +54,7 @@
                 <li>
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
-                        <li><a href="userList.html"><i class="icon-font">&#xe008;</i>用户管理</a></li>
+                        <li><a href="userAction"><i class="icon-font">&#xe008;</i>用户管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe006;</i>产品类别</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>产品管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>订单管理</a></li>
@@ -79,7 +79,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">管理员管理</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="main.jsp">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">管理员管理</span></div>
         </div>
         <div class="search-wrap">
             <div class="search-content">
@@ -99,13 +99,13 @@
                 <div class="result-title">
                     <div class="result-list">
                         <a href="addAdminUser.jsp"><i class="icon-font"></i>增加管理员</a>
-                        <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a> 
+                        <a id="batchDel" href="adminUserAction!deleteAdminById?id=<s:property value=""/>"><i class="icon-font"></i>批量删除</a> 
                     </div>
                 </div>
                 <div class="result-content">
                     <table class="result-tab" width="100%">
                         <tr>
-                            <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
+                            <th class="tc" width="5%"><input class="allChoose" id="allck" type="checkbox" onclick="allChoose()"></th>
                             <th>ID</th>
                             <th>用户名</th>
                             <th>密码</th>
@@ -130,6 +130,7 @@
                     	总共页数：<s:property value="page.totalPage"/>
                     	当前页：<s:property value="page.currentPage"/>
                     	每页显示：<s:property value="page.pageSize"/>
+                    	总共的记录数：<s:property value="page.AllRow"/>
                     	<a href="adminUserAction?currentPage=${currentPage-1}">上一页</a>
                     	<a href="adminUserAction?currentPage=${currentPage+1}">下一页</a>
                     </div>

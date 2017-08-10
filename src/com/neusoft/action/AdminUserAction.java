@@ -112,11 +112,11 @@ public class AdminUserAction extends ActionSupport {
 		adminUser.setUsername(username);
 		adminUser.setPassword(password);
 		adminUserService.updateAdminUser(adminUser);
-		return "success";
+		return "updatesuccess";
 	}
 	public String deleteAdminById(){
 		adminUser = adminUserService.findAdminById(id);
 		adminUserService.deleteAdminUser(adminUser);
-		return "success";
+		return "deletesuccess";
 	}
 }

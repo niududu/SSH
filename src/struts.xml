@@ -5,6 +5,14 @@
 		<action name="adminUserAction"  class="adminUserAction" >
 			<result name="success" >/admin/adminUserList.jsp</result>
 			<result name="updatetopage">/admin/updateAdminUser.jsp</result>
+			<result name="updatesuccess" type="redirectAction">adminUserAction</result>
+			<result name="deletesuccess" type="redirectAction">adminUserAction</result>
+		</action>
+		<action name="userAction" class="userAction">
+			<result name="success">/admin/userList.jsp</result>
+			<result name="updatetopage">/admin/updateUser.jsp</result>
+			<result name="updatesuccess" type="redirectAction">userAction</result>
+			<result name="deletesuccess" type="redirectAction">userAction</result>
 		</action>
 	</package>
 </struts>    

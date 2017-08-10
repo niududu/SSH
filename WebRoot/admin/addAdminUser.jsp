@@ -37,7 +37,7 @@
                 <li>
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
-                        <li><a href="userList.html"><i class="icon-font">&#xe008;</i>用户管理</a></li>
+                        <li><a href="userAction"><i class="icon-font">&#xe008;</i>用户管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe006;</i>产品类别</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>产品管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>订单管理</a></li>
@@ -62,7 +62,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">管理员管理</a><span class="crumb-step">&gt;</span><span>增加管理员</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="main.jsp">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="adminUserAction">管理员管理</a><span class="crumb-step">&gt;</span><span>增加管理员</span></div>
         </div>
         <div class="result-wrap">
             <div class="result-content">

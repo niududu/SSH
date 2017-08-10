@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+validator.Checked=WebRoot/js/sw_core/isotope.js,WebRoot/js/select2/select2.min.js,WebRoot/js/jquery/jquery.min.js,WebRoot/js/jquery/jquery-migrate.min.js
+validator.Unchecked=

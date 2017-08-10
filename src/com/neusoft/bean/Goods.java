@@ -5,5 +5,5 @@ package com.neusoft.bean;
  *
  */
 public class Goods {
-
+	
 }
