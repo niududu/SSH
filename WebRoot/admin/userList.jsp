@@ -30,7 +30,7 @@
         <div class="topbar-logo-wrap clearfix">
             <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
             <ul class="navbar-list clearfix">
-                <li><a class="on" href="index.html">首页</a></li>
+                <li><a class="on" href="main.jsp">首页</a></li>
                 <li><a href=" " target="_blank">网站首页</a></li>
             </ul>
         </div>
@@ -54,8 +54,8 @@
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
                         <li><a href="userAction"><i class="icon-font">&#xe008;</i>用户管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe006;</i>产品类别</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe005;</i>产品管理</a></li>
+                        <li><a href="design.html"><i class="icon-font">&#xe006;</i>商品类别</a></li>
+                        <li><a href="goodsAction"><i class="icon-font">&#xe005;</i>商品管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>订单管理</a></li>
                         <li><a href="adminUserAction"><i class="icon-font">&#xe005;</i>管理员管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>

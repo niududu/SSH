@@ -16,7 +16,10 @@
 		</action>
 		<action name="goodsAction" class="goodsAction">
 			<result name="success">/admin/goodsList.jsp</result>
-			
+			<result name="addsuccess" type="redirectAction">goodsAction</result>
+			<result name="updatetopage">/admin/updateGoods.jsp</result>
+			<result name="updatesuccess" type="redirectAction">goodsAction</result>
+			<result name="deletesuccess" type="redirectAction">goodsAction</result>
 		</action>
 	</package>
 </struts>    

@@ -91,7 +91,7 @@ public class goodsAction extends ActionSupport{
 	}
 	@Override
 	public String execute() throws Exception {
-		page =goodsService.findGoods(currentPage, pageSize);
+		page =goodsService.findGoodsList(currentPage, pageSize);
 		return "success";
 	}
 	public String register(){
@@ -101,11 +101,25 @@ public class goodsAction extends ActionSupport{
 		goods.setGoodsdesc(goodsdesc);
 		goods.setPrice(price);
 		goodsService.saveGoods(goods);
-		return "success";
+		return "addsuccess";
 	}
 	public String findGoodsById(){
 		goods= goodsService.findGoodsById(goodsid);
 		return "updatetopage";
+	}
+	public String updateGoods(){
+		Goods goods=new Goods();
+		goods.setGoodsid(goodsid);
+		goods.setGoodsname(goodsname);
+		goods.setGoodsdesc(goodsdesc);
+		goods.setPrice(price);
+		goodsService.updateGoods(goods);
+		return "updatesuccess";
+	}
+	public String deleteGoodsById(){
+		goods=goodsService.findGoodsById(goodsid);
+		goodsService.deleteGoods(goods);
+		return "deletesuccess";
 	}
 	
 	

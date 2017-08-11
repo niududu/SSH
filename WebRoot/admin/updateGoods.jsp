@@ -21,9 +21,9 @@
         </div>
         <div class="top-info-wrap">
             <ul class="top-info-list clearfix">
-                <li><a href="http://www.mycodes.net">管理员</a></li>
-                <li><a href="http://www.mycodes.net">修改密码</a></li>
-                <li><a href="http://www.mycodes.net">退出</a></li>
+                <li>管理员</li>
+                <li>修改密码</li>
+                <li><a href="">退出</a></li>
             </ul>
         </div>
     </div>
@@ -51,7 +51,8 @@
                 <li>
                     <a href="#"><i class="icon-font">&#xe018;</i>系统管理</a>
                     <ul class="sub-menu">
-                        <li><a href="system.html"><i class="icon-font">&#xe017;</i>系统设置</a></li> 
+                        <li><a href="system.html"><i class="icon-font">&#xe017;</i>系统设置</a></li>
+                        <li><a href="system.html"><i class="icon-font">&#xe037;</i>清理缓存</a></li>
                         <li><a href="system.html"><i class="icon-font">&#xe046;</i>数据备份</a></li>
                         <li><a href="system.html"><i class="icon-font">&#xe045;</i>数据还原</a></li>
                     </ul>
@@ -63,25 +64,52 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="main.jsp">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="adminUserAction">管理员管理</a><span class="crumb-step">&gt;</span><span>修改管理员</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="main.jsp">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="goodsAction">商品管理</a><span class="crumb-step">&gt;</span><span>修改商品</span></div>
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="adminUserAction!updateAdmin" method="post" id="myform" name="myform">
+                 
+                <form action="goodsAction!updateGoods" method="post" enctype="multipart/form-data">
                     <table class="insert-tab" width="100%">
                         <tbody>
+                        <!--  
+                        <tr>
+                            <th width="120"><i class="require-red">*</i>商品类别：</th>
+                            <td>
+                                <select name="typeid" class="required"> 
+                                    <option>服装</option>
+                                    <option>电器</option>
+                                    <option>日用品</option>
+                                    <option>食品</option>
+                                    <option>厨房用品</option>
+                                    <option>家具</option>
+                                </select>
+                            </td>
+                        </tr>
+                        -->
                             <tr>
-                                <th><i class="require-red">*</i>用户名：</th>
+                                <th><i class="require-red">*</i>商品名称：</th>
                                 <td>
-                                <!-- 未能实现固定username,所以username以及password都可以被修改 -->
-                                    <input class="common-text required" id="username" name="username" size="50" value="<s:property value="adminUser.username"/>" type="text" readonly="readonly" >
-                                    <input class="common-text required" id="id" name="id" size="50" <s:property value="id"/> type="hidden" >
+                                    <input class="common-text required" name="goodsname" size="50" value="<s:property value="Goods.goodsname"/>" type="text">
                                 </td>
                             </tr>
                             <tr>
-                                <th>密码：</th>
-                                <td><input class="common-text" name="password" size="50" type="text"value="<s:property value="adminUser.password"/>"></td>
+                                <th>商品描述：</th>
+                          <td><input class="common-text" name="goodsdesc" size="50" type="text" value="<s:property value="Goods.goodsdesc"/>"></td>
                             </tr>
+                            <tr>
+                                <th>价格：</th>
+                                <td><input class="common-text" name="price" size="50" type="text" value="<s:property value="Goods.price"/>"></td>
+                            </tr>
+                            <!--  
+                            <tr>
+                                <th>商品图片：</th>
+                                <td><input class="common-text" name="pic" size="50" type="file">
+                                    <input class="common-text" name="id" size="50" type="hidden" value="">
+                                </td>
+                                
+                            </tr> 
+                            -->
                             <tr>
                                 <th></th>
                                 <td>
@@ -91,6 +119,7 @@
                             </tr>
                         </tbody></table>
                 </form>
+                 
             </div>
         </div>
 

@@ -12,6 +12,6 @@ public interface GoodsService {
 	public void saveGoods(Goods goods);
 	public void updateGoods(Goods goods);
 	public void deleteGoods(Goods goods);
-	public Page findGoods(int currentPage,int pageSize);
+	public Page findGoodsList(int currentPage,int pageSize);
 	public Goods findGoodsById(int goodsid);
 }

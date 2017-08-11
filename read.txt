@@ -1,0 +1,26 @@
+		SSH
+
+1、在Struts框架中的action类中要添加业务逻辑层中的对象信息
+2、底层的数据持久层基本没有变动
+
+
+		SH
+1、在底层即数据持久层（UserDao接口）中配置好“增删改查”方法
+	然后在实现类中实现相关方法
+
+	网上商城项目
+1.相关实体类
+  在管理层中：
+	用户管理：增加用户、修改用户、删除用户
+		用户的基本属性：id、username、password、email
+	商品类别：增删改
+		商品类别的基本属性：商品类别id：goodsTypeId
+				    商品类别名称：goodsTypeName
+	 	商品类别的关系映射：商品类别-->商品   一对多
+	商品管理：增删改
+		商品基本属性：goodsid、goodsname、goodsdesc、price
+	订单管理：
+	管理员管理：增删改
+		管理员的基本属性：id、username、password、lastlogintime
+	评论管理：
+	

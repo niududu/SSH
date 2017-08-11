@@ -37,7 +37,7 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 
 	@Override
-	public Page findGoods(int currentPage, int pageSize) {
+	public Page findGoodsList(int currentPage, int pageSize) {
 		// TODO Auto-generated method stub
 		Page page = goodsDao.findGoods(currentPage, pageSize);
 		return page;
