@@ -15,5 +15,10 @@
 	
 	<bean id="goodsAction" class="com.neusoft.action.goodsAction">
 		<property name="goodsService" ref="goodsService"></property>
+		<property name="goodsTypeService" ref="goodsTypeService"></property>
+	</bean>
+	
+	<bean id="goodsTypeAction" class="com.neusoft.action.goodsTypeAction">
+		<property name="goodsTypeService" ref="goodsTypeService"></property>
 	</bean>
 </beans>

@@ -94,12 +94,15 @@ public class AdminUserAction extends ActionSupport {
 		page = adminUserService.findAdminUserList(currentPage, pageSize);
 		return "success";
 	}
+	public String addAdminUser(){
+		return "addtopage";
+	}
 	public String register(){
 		AdminUser adminUser=new AdminUser();
 		adminUser.setUsername(username);
 		adminUser.setPassword(password);
 		adminUserService.saveAdminUser(adminUser);
-		return "success";
+		return "addsuccess";
 	}
 	//通过id查找数据
 	public String findAdminById(){

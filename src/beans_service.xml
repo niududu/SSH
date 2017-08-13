@@ -16,4 +16,8 @@
 	<bean id="goodsService" class="com.neusoft.service.impl.GoodsServiceImpl">
 		<property name="goodsDao" ref="goodsDao"></property>
 	</bean>
+	
+	<bean id="goodsTypeService" class="com.neusoft.service.impl.GoodsTypeServiceImpl">
+		<property name="goodsTypeDao" ref="goodsTypeDao"></property>
+	</bean>
 </beans>

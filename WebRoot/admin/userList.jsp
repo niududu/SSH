@@ -54,9 +54,9 @@
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
                         <li><a href="userAction"><i class="icon-font">&#xe008;</i>用户管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe006;</i>商品类别</a></li>
+                        <li><a href="goodsTypeAction"><i class="icon-font">&#xe006;</i>商品类别</a></li>
                         <li><a href="goodsAction"><i class="icon-font">&#xe005;</i>商品管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe005;</i>订单管理</a></li>
+                        <li><a href="orderAction"><i class="icon-font">&#xe005;</i>订单管理</a></li>
                         <li><a href="adminUserAction"><i class="icon-font">&#xe005;</i>管理员管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe052;</i>友情链接</a></li>
@@ -97,7 +97,7 @@
             <form action="" name="myform" id="myform" method="post">
                 <div class="result-title">
                     <div class="result-list">
-                        <a href="addUser.jsp"><i class="icon-font"></i>增加用户</a>
+                        <a href="userAction!addUser"><i class="icon-font"></i>增加用户</a>
                         <a id="batchDel" href="javascript:allChoose()"><i class="icon-font"></i>批量删除</a> 
                     </div>
                 </div>

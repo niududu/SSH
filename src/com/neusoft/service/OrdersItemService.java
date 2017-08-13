@@ -1,9 +1,9 @@
 package com.neusoft.service;
 /**
- * ¶©µ¥Ïî
+ * ¶©µ¥
  * @author admin
  *
  */
-public interface OrderItemService {
+public interface OrdersItemService {
 
 }

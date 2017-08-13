@@ -14,6 +14,14 @@ public class Goods {
 	//商品价格
 	private int price;
 	
+	private GoodsType goodsTypees;
+		
+	public GoodsType getGoodsTypees() {
+		return goodsTypees;
+	}
+	public void setGoodsTypees(GoodsType goodsTypees) {
+		this.goodsTypees = goodsTypees;
+	}
 	public int getGoodsid() {
 		return goodsid;
 	}

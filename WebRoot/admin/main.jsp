@@ -1,5 +1,7 @@
 ﻿<%@page language="java" pageEncoding="utf-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
+<%@ page import="java.util.*"%> <!--获取系统时间必须导入的   -->
+<%@ page import="java.text.*"%> <!--获取系统时间必须导入的  --> 
 <html>
 <head>
     <meta charset="UTF-8">
@@ -38,9 +40,9 @@
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
                          <li><a href="userAction"><i class="icon-font">&#xe008;</i>用户管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe006;</i>商品类别</a></li>
+                        <li><a href="goodsTypeAction"><i class="icon-font">&#xe006;</i>商品类别</a></li>
                         <li><a href="goodsAction"><i class="icon-font">&#xe005;</i>商品管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe005;</i>订单管理</a></li>
+                        <li><a href="orderAction"><i class="icon-font">&#xe005;</i>订单管理</a></li>
                         <li><a href="adminUserAction"><i class="icon-font">&#xe005;</i>管理员管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe052;</i>友情链接</a></li>
@@ -69,10 +71,10 @@
             </div>
             <div class="result-content">
                 <div class="short-wrap">
-                    <a href="addUser.jsp"><i class="icon-font">&#xe001;</i>新增用户</a>
-                    <a href="addGoods.jsp"><i class="icon-font">&#xe005;</i>新增产品</a>
-                    <a href="#"><i class="icon-font">&#xe048;</i>新增产品分类</a>
-                    <a href="addAdminUser.jsp"><i class="icon-font">&#xe041;</i>新增管理员</a> 
+                    <a href="userAction!addUser"><i class="icon-font">&#xe001;</i>新增用户</a>
+                    <a href="goodsAction!addGoods"><i class="icon-font">&#xe005;</i>新增产品</a>
+                    <a href="goodsTypeAction!addGoodsType"><i class="icon-font">&#xe048;</i>新增产品分类</a>
+                    <a href="adminUserAction!addAdminUser"><i class="icon-font">&#xe041;</i>新增管理员</a> 
                 </div>
             </div>
         </div>
@@ -95,7 +97,8 @@
                         <label class="res-lab">版本</label><span class="res-info">v1.0</span>
                     </li> 
                     <li>
-                        <label class="res-lab">北京时间</label><span class="res-info">2017年7月1日 08:00:00</span>
+                        <label class="res-lab">系统当前时间</label><span class="res-info">
+                        <% out.print(new java.text.SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date())); %></span>
                     </li>
                     <li>
                         <label class="res-lab">服务器域名/IP</label><span class="res-info">localhost [ 127.0.0.1 ]</span>

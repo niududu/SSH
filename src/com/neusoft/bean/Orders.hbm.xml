@@ -2,14 +2,14 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.neusoft.bean">
-		<class name="GoodsType" table="goodsType" catalog="myssh">
-		<id name="goodsTypeId" column="goodsTypeId">
+		<class name="Orders" table="orders" catalog="myssh">
+		<id name="ordersId" column="ordersId">
 		 	<generator class="native"/>
 		</id>
-		<property name="goodsTypeName" column="goodsTypeName"/>
-		<set name="goodes" cascade="all">
-			<key column="goodstypeId"/>
-			<one-to-many class="com.neusoft.bean.Goods"/>
+		<property name="ordersName" column="ordersName"/>
+		<set name="ordersItems" cascade="all">
+			<key column="ordersId"></key>
+			<one-to-many class="OrdersItem"/>
 		</set>
 	</class>
 </hibernate-mapping>

@@ -39,9 +39,9 @@
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
                          <li><a href="userAction"><i class="icon-font">&#xe008;</i>用户管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe006;</i>商品类别</a></li>
+                        <li><a href="goodsTypeAction"><i class="icon-font">&#xe006;</i>商品类别</a></li>
                         <li><a href="goodsAction"><i class="icon-font">&#xe005;</i>商品管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe005;</i>订单管理</a></li>
+                        <li><a href="orderAction"><i class="icon-font">&#xe005;</i>订单管理</a></li>
                         <li><a href="adminUserAction"><i class="icon-font">&#xe005;</i>管理员管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe052;</i>友情链接</a></li>
@@ -101,6 +101,10 @@
                                 <th>价格：</th>
                                 <td><input class="common-text" name="price" size="50" type="text" value="<s:property value="Goods.price"/>"></td>
                             </tr>
+                            <tr>
+                            	<th>商品类别Id对应的名称：</th>
+                            	<td><s:select name="goodsTypees.goodsTypeId" theme="simple" headerKey="-1" headerValue="--选择商品类别--" list="gt" listKey="GoodsTypeId" listValue="GoodsTypeName"/></td>
+                          	</tr>
                             <!--  
                             <tr>
                                 <th>商品图片：</th>

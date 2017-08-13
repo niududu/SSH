@@ -9,5 +9,6 @@
 		<property name="goodsname" column="goodsname"/>
 		<property name="goodsdesc" column="goodsdesc"/>
 		<property name="price" column="price"/>
+		<many-to-one name="goodsTypees" column="goodsTypeId"></many-to-one>
 	</class>
 </hibernate-mapping>

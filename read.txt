@@ -11,16 +11,18 @@
 	网上商城项目
 1.相关实体类
   在管理层中：
-	用户管理：增加用户、修改用户、删除用户
+	用户管理：增加用户、修改用户、删除用户、查找用户
 		用户的基本属性：id、username、password、email
-	商品类别：增删改
+	商品类别：增删改查
 		商品类别的基本属性：商品类别id：goodsTypeId
 				    商品类别名称：goodsTypeName
-	 	商品类别的关系映射：商品类别-->商品   一对多
-	商品管理：增删改
+	 	商品类别的关系映射：商品类别<-->商品   一对多(双向)
+	商品管理：增删改查
 		商品基本属性：goodsid、goodsname、goodsdesc、price
-	订单管理：
-	管理员管理：增删改
+	订单管理：订单基本属性：订单Id：orderId、订单名称：orderName 
+		（一个订单中可以包含一个或多个商品）所以映射关系是：订单-->订单项：一对多
+		       订单项基本属性：订单项Id：orderItemId、订单项数量orderItemSum
+	管理员管理：增删改查
 		管理员的基本属性：id、username、password、lastlogintime
 	评论管理：
 	

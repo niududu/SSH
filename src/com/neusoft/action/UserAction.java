@@ -90,13 +90,16 @@ public class UserAction extends ActionSupport{
 		page =userService.findUserList(currentPage, pageSize);
 		return "success";
 	}
+	public String addUser(){
+		return "addtopage";
+	}
 	public String register(){
 		User user=new User();
 		user.setUsername(username);
 		user.setPassword(password);
 		user.setEmail(email);
 		userService.saveUser(user);
-		return "success";
+		return "addsuccess";
 	}
 	public String findUserById(){
 		user=userService.findUserById(id);

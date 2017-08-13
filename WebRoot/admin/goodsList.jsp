@@ -54,9 +54,9 @@
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
                        <li><a href="userAction"><i class="icon-font">&#xe008;</i>用户管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe006;</i>商品类别</a></li>
+                        <li><a href="goodsTypeAction"><i class="icon-font">&#xe006;</i>商品类别</a></li>
                         <li><a href="goodsAction"><i class="icon-font">&#xe005;</i>商品管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe005;</i>订单管理</a></li>
+                        <li><a href="orderAction"><i class="icon-font">&#xe005;</i>订单管理</a></li>
                         <li><a href="adminUserAction"><i class="icon-font">&#xe005;</i>管理员管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe052;</i>友情链接</a></li>
@@ -100,6 +100,7 @@
                                 </select>
                             </td>
                             -->
+                        <tr>
                             <th width="70">关键字:</th>
                             <td><input class="common-text" placeholder="关键字" name="keywords" value="" id="" type="text"></td>
                             <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
@@ -113,7 +114,7 @@
             <form action=" " name="myform" id="myform" method="post">
                 <div class="result-title">
                     <div class="result-list">
-                        <a href="addGoods.jsp"><i class="icon-font"></i>增加商品</a>
+                        <a href="goodsAction!addGoods"><i class="icon-font"></i>增加商品</a>
                         <!--  <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
                         --> 
                         <a id="batchDel" href="javascript:allChoose()"><i class="icon-font"></i>批量删除</a> 
@@ -127,8 +128,8 @@
                             <th>商品名称</th>
                             <th>商品描述</th>
                             <th>价格</th>
-                            <!--  
                             <th>商品类别ID</th>
+							 <!-- 
                             <th>商品类别</th>
                             <th>商品图片</th> 
                             -->
@@ -141,8 +142,8 @@
                             <td><s:property value="goodsname"/></td>
                             <td><s:property value="goodsdesc"/></td>
                             <td><s:property value="price"/></td>
-                            <!--  
-                            <td>aaa</td>
+                            <td><s:property value="goodsTypees.goodsTypeId"/></td>
+                             <!-- 
                             <td>aaa</td> 
                             
                             <td><img src="../" width="50px" height="50px"></td> 

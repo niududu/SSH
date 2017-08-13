@@ -1,9 +1,9 @@
 package com.neusoft.service.impl;
 /**
- * ¶©µ¥Ïî
+ * ¶©µ¥
  * @author admin
  *
  */
-public class OrderItemServiceImpl {
+public class OrdersItemServiceImpl {
 
 }

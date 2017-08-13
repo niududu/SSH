@@ -1,9 +1,9 @@
 package com.neusoft.dao.impl;
 /**
- * ¶©µ¥Ïî
+ * ¶©µ¥
  * @author admin
  *
  */
-public class OrderItemDaoImpl {
+public class OrdersItemDaoImpl {
 
 }

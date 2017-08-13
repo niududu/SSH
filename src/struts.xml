@@ -2,24 +2,37 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="ssh" namespace="/admin" extends="struts-default">
-		<action name="adminUserAction"  class="adminUserAction" >
+		<action name="adminUserAction"  class="adminUserAction"  >
 			<result name="success" >/admin/adminUserList.jsp</result>
+			<result name="addtopage">/admin/addAdminUser.jsp</result>
 			<result name="updatetopage">/admin/updateAdminUser.jsp</result>
+			<result name="addsuccess" type="redirectAction">adminUserAction</result>
 			<result name="updatesuccess" type="redirectAction">adminUserAction</result>
 			<result name="deletesuccess" type="redirectAction">adminUserAction</result>
 		</action>
 		<action name="userAction" class="userAction">
 			<result name="success">/admin/userList.jsp</result>
+			<result name="addtopage">/admin/addUser.jsp</result>
 			<result name="updatetopage">/admin/updateUser.jsp</result>
+			<result name="addsuccess" type="redirectAction">userAction</result>
 			<result name="updatesuccess" type="redirectAction">userAction</result>
 			<result name="deletesuccess" type="redirectAction">userAction</result>
 		</action>
 		<action name="goodsAction" class="goodsAction">
 			<result name="success">/admin/goodsList.jsp</result>
-			<result name="addsuccess" type="redirectAction">goodsAction</result>
+			<result name="addtopage">/admin/addGoods.jsp</result>
 			<result name="updatetopage">/admin/updateGoods.jsp</result>
+			<result name="addsuccess" type="redirectAction">goodsAction</result>
 			<result name="updatesuccess" type="redirectAction">goodsAction</result>
 			<result name="deletesuccess" type="redirectAction">goodsAction</result>
+		</action>
+		<action name="goodsTypeAction" class="goodsTypeAction">
+			<result name="success">/admin/goodsTypeList.jsp</result>
+			<result name="addtopage">/admin/addGoodsType.jsp</result>
+			<result name="updatetopage">/admin/updateGoodsType.jsp</result>
+			<result name="addsuccess" type="redirectAction">goodsTypeAction</result>
+			<result name="updatesuccess" type="redirectAction">goodsTypeAction</result>
+			<result name="deletesuccess" type="redirectAction">goodsTypeAction</result>
 		</action>
 	</package>
 </struts>    

@@ -1,9 +1,9 @@
 package com.neusoft.dao;
 /**
- * ¶©µ¥Ïî
+ * ¶©µ¥
  * @author admin
  *
  */
-public interface OrderItemDao {
+public interface OrdersItemDao {
 
 }

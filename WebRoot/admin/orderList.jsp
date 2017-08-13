@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿<%@page language="java" pageEncoding="utf-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
+<!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -6,6 +8,21 @@
     <link rel="stylesheet" type="text/css" href="css/common.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <script type="text/javascript" src="js/libs/modernizr.min.js"></script>
+     <script type="text/javascript">
+    function allChoose(){
+     	  var allcheck=document.getElementById("allck");
+    	  var idcks=document.getElementsByName("ids"); 
+    	  if(allcheck.checked==true){
+    		  for(var i=0;i<idcks.length;i++){
+    			  idcks[i].checked=true;
+    		  }
+    	   }else{ 
+    		   for(var i=0;i<idcks.length;i++){
+     			  idcks[i].checked=false;
+     		  }
+    	   }
+       }
+    </script>
 </head>
 <body>
 <div class="topbar-wrap white">
@@ -13,7 +30,7 @@
         <div class="topbar-logo-wrap clearfix">
             <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
             <ul class="navbar-list clearfix">
-                <li><a class="on" href="index.html">首页</a></li>
+                <li><a class="on" href="main.jsp">首页</a></li>
                 <li><a href=" " target="_blank">网站首页</a></li>
             </ul>
         </div>
@@ -36,13 +53,14 @@
                 <li>
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
-                        <li><a href="userList.html"><i class="icon-font">&#xe008;</i>用户管理</a></li>
-                        <li><a href="productList.html"><i class="icon-font">&#xe005;</i>产品管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe006;</i>分类管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe004;</i>订单管理</a></li>
+                       <li><a href="userAction"><i class="icon-font">&#xe008;</i>用户管理</a></li>
+                        <li><a href="goodsTypeAction"><i class="icon-font">&#xe006;</i>商品类别</a></li>
+                        <li><a href="goodsAction"><i class="icon-font">&#xe005;</i>商品管理</a></li>
+                        <li><a href="orderAction"><i class="icon-font">&#xe005;</i>订单管理</a></li>
+                        <li><a href="adminUserAction"><i class="icon-font">&#xe005;</i>管理员管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe052;</i>友情链接</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe033;</i>广告管理</a></li>
+                        <li><a href="design.html"><i class="icon-font">&#xe033;</i>广告管理</a></li> 
                     </ul>
                 </li>
                 <li>
@@ -61,12 +79,13 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">商品管理</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="main.jsp">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">订单管理</span></div>
         </div>
         <div class="search-wrap">
             <div class="search-content">
                 <form action="#" method="post">
                     <table class="search-tab">
+                    <!--  
                         <tr>
                             <th width="120">选择分类:</th>
                             <td>
@@ -80,10 +99,12 @@
                                     <option value="6">家具</option>
                                 </select>
                             </td>
+                            -->
                             <th width="70">关键字:</th>
                             <td><input class="common-text" placeholder="关键字" name="keywords" value="" id="" type="text"></td>
                             <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
                         </tr>
+                        
                     </table>
                 </form>
             </div>
@@ -92,43 +113,45 @@
             <form action=" " name="myform" id="myform" method="post">
                 <div class="result-title">
                     <div class="result-list">
-                        <a href="addProduct.jsp"><i class="icon-font"></i>增加商品</a>
-                        <!--  <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
-                        --> 
-                        <input type="submit" id="batchDel" value="批量删除"> 
+                        <a href="addOrder.jsp"><i class="icon-font"></i>增加订单</a>
+                        <a id="batchDel" href="javascript:allChoose()"><i class="icon-font"></i>批量删除</a> 
                     </div>
                 </div>
                 <div class="result-content">
                     <table class="result-tab" width="100%">
                         <tr>
-                            <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
+                            
+                            <th class="tc" width="5%"><input class="allChoose" id="allck" type="checkbox" onclick="allChoose()"></th>
+                            <!-- 
                             <th>ID</th>
                             <th>商品名称</th>
                             <th>商品描述</th>
                             <th>价格</th>
-                            <th>商品类别ID</th>
-                            <th>商品类别</th>
-                            <th>商品图片</th> 
+                            --> 
+                            <th>订单ID</th>
+                            <th>订单名称</th>
                             <th>操作</th>
                         </tr>
-                        
+                        <s:iterator value="page.data">
                         <tr>
                             <td class="tc"><input name="ids" value="" type="checkbox"></td>
-                            <td>aa</td>
-                            <td>aaa</td>
-                            <td>aaa</td>
-                            <td>aa</td>
-                            <td>aaa</td>
-                            <td>aaa</td> 
-                            <td><img src="../" width="50px" height="50px"></td> 
+                            <td><s:property value="orderId"/></td>
+                            <td><s:property value="orderName"/></td>
                             <td>
-                                <a class="link-update" href="">修改</a>
-                                <a class="link-del" href="">删除</a>
+                                <a class="link-update" href="orderAction!findorderById?orderId=<s:property value="orderId"/>">修改</a>
+                                <a class="link-del" href="orderAction!deleteorderById?orderId=<s:property value="orderId"/>">删除</a>
                             </td>
                         </tr> 
-                         
+                         </s:iterator>
                     </table>
-                    <div class="list-page"> 2 条 1/1 页</div>
+                    <div class="list-page"> 
+                    	总共页数：<s:property value="page.totalPage"/>
+                    	当前页：<s:property value="page.currentPage"/>
+                    	每页显示：<s:property value="page.pageSize"/>
+                    	总共的记录数：<s:property value="page.AllRow"/>
+                    	<a href="orderAction?currentPage=${currentPage-1}">上一页</a>
+                    	<a href="orderAction?currentPage=${currentPage+1}">下一页</a>
+                    </div>
                 </div>
             </form>
         </div>
